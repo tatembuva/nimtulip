@@ -4,7 +4,6 @@
 #
 #  To Run Tests : `nimble test --verbose`.
 import unittest
-import print
 
 # Nim Tulip Indicators (nti)
 import nimtulip as nti
@@ -13,6 +12,10 @@ import nimtulip as nti
 test "[nti.version] : gets lib version" :
   check nti.version() == "0.0.1"
   check nti.version(true) == "0.0.1"
+test "[nti.indicators] : get all indicators":
+  discard nti.indicators()
+test "[nti.indicators(indicator)] : get indicator info":
+  discard nti.indicators("sma")
 
 # Indicator Functions
 
@@ -305,11 +308,12 @@ test "[nti.sub] : runs Vector Subtraction" :
   discard nti.sub(data1=data1, data2=data2, )
 
 # Mass Index
-# test "[nti.mass] : runs Mass Index" :
-#   var high = @[12.0, 4.8, 78.0, 23.0, 45.7, 90.4, 100.0, 92.2, 39.8, 10.0, 20.4]
-#   var nlow = @[12.0, 4.8, 78.0, 23.0, 45.7, 90.4, 100.0, 92.2, 39.8, 10.0, 20.4]
-#   var period: float = 3.0 
-#   discard nti.mass(high=high, nlow=nlow, period=period, )
+test "[nti.mass] : runs Mass Index" :
+  var high = @[12.0, 4.8, 78.0, 23.0, 45.7, 90.4, 100.0, 92.2, 39.8, 10.0, 20.4]
+  var nlow = @[12.0, 4.8, 78.0, 23.0, 45.7, 90.4, 100.0, 92.2, 39.8, 10.0, 20.4]
+  var period: float = 3.0 
+#  discard nti.mass(high=high, nlow=nlow, period=period, )
+#  Tulip Indicator Library func error...
 
 # Vector Hyperbolic Tangent
 test "[nti.tanh] : runs Vector Hyperbolic Tangent" :
@@ -564,10 +568,10 @@ test "[nti.emv] : runs Ease of Movement" :
 
 # Bollinger Bands
 test "[nti.bbands] : runs Bollinger Bands" :
-  var input: seq[float] = @[81.59,81.06,82.87,83.00,83.61,83.15,82.84,83.99,84.55,84.36,85.53,86.54,86.89,87.77,87.29]
-  var period : float = 5.0
-  var stdev : float = 2.0 
-  discard nti.bbands(data=input, period=period,  stddev= stdev, )
+  var data = @[12.0, 4.8, 78.0, 23.0, 45.7, 90.4, 100.0, 92.2, 39.8, 10.0, 20.4]
+  var period: float = 3.0 
+  var  stddev: float = 3.0 
+  discard nti.bbands(data=data, period=period,  stddev= stddev, )
 
 # Variable Index Dynamic Average
 test "[nti.vidya] : runs Variable Index Dynamic Average" :

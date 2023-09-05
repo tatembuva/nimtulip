@@ -60,8 +60,10 @@ proc hma*(data: seq[float],period: float): tuple[hma: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_hma(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var hma_seq = newSeq[float](output_size)
@@ -105,8 +107,10 @@ proc atan*(data: seq[float],): tuple[atan: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_atan(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var atan_seq = newSeq[float](output_size)
@@ -157,8 +161,10 @@ proc ao*(high: seq[float],nlow: seq[float],): tuple[ao: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ao(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ao_seq = newSeq[float](output_size)
@@ -202,8 +208,10 @@ proc asin*(data: seq[float],): tuple[asin: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_asin(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var asin_seq = newSeq[float](output_size)
@@ -255,8 +263,10 @@ proc cvi*(high: seq[float],nlow: seq[float],period: float): tuple[cvi: seq[float
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_cvi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var cvi_seq = newSeq[float](output_size)
@@ -314,8 +324,10 @@ proc ultosc*(high: seq[float],nlow: seq[float],close: seq[float],short_period: f
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ultosc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ultosc_seq = newSeq[float](output_size)
@@ -360,8 +372,10 @@ proc min*(data: seq[float],period: float): tuple[min: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_min(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var min_seq = newSeq[float](output_size)
@@ -405,8 +419,10 @@ proc ln*(data: seq[float],): tuple[ln: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ln(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ln_seq = newSeq[float](output_size)
@@ -458,8 +474,10 @@ proc aroonosc*(high: seq[float],nlow: seq[float],period: float): tuple[aroonosc:
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_aroonosc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var aroonosc_seq = newSeq[float](output_size)
@@ -504,8 +522,10 @@ proc trix*(data: seq[float],period: float): tuple[trix: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_trix(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var trix_seq = newSeq[float](output_size)
@@ -562,8 +582,10 @@ proc avgprice*(open: seq[float],high: seq[float],nlow: seq[float],close: seq[flo
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_avgprice(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var avgprice_seq = newSeq[float](output_size)
@@ -617,8 +639,10 @@ proc wad*(high: seq[float],nlow: seq[float],close: seq[float],): tuple[wad: seq[
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_wad(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var wad_seq = newSeq[float](output_size)
@@ -663,8 +687,10 @@ proc cmo*(data: seq[float],period: float): tuple[cmo: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_cmo(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var cmo_seq = newSeq[float](output_size)
@@ -719,8 +745,10 @@ proc cci*(high: seq[float],nlow: seq[float],close: seq[float],period: float): tu
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_cci(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var cci_seq = newSeq[float](output_size)
@@ -771,8 +799,10 @@ proc obv*(close: seq[float],volume: seq[float],): tuple[obv: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_obv(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var obv_seq = newSeq[float](output_size)
@@ -817,8 +847,10 @@ proc wma*(data: seq[float],period: float): tuple[wma: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_wma(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var wma_seq = newSeq[float](output_size)
@@ -873,8 +905,10 @@ proc willr*(high: seq[float],nlow: seq[float],close: seq[float],period: float): 
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_willr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var willr_seq = newSeq[float](output_size)
@@ -918,8 +952,10 @@ proc abs*(data: seq[float],): tuple[abs: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_abs(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var abs_seq = newSeq[float](output_size)
@@ -981,8 +1017,10 @@ proc macd*(data: seq[float],short_period: float, long_period: float, signal_peri
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_macd(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var macd_seq = newSeq[float](output_size)
@@ -1031,8 +1069,10 @@ proc tema*(data: seq[float],period: float): tuple[tema: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_tema(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var tema_seq = newSeq[float](output_size)
@@ -1076,8 +1116,10 @@ proc log10*(data: seq[float],): tuple[log10: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_log10(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var log10_seq = newSeq[float](output_size)
@@ -1122,8 +1164,10 @@ proc linregslope*(data: seq[float],period: float): tuple[linregslope: seq[float]
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_linregslope(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var linregslope_seq = newSeq[float](output_size)
@@ -1168,8 +1212,10 @@ proc ema*(data: seq[float],period: float): tuple[ema: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ema(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ema_seq = newSeq[float](output_size)
@@ -1214,8 +1260,10 @@ proc stderr*(data: seq[float],period: float): tuple[stderr: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_stderr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var stderr_seq = newSeq[float](output_size)
@@ -1259,8 +1307,10 @@ proc trunc*(data: seq[float],): tuple[trunc: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_trunc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var trunc_seq = newSeq[float](output_size)
@@ -1304,8 +1354,10 @@ proc sqrt*(data: seq[float],): tuple[sqrt: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sqrt(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sqrt_seq = newSeq[float](output_size)
@@ -1356,8 +1408,10 @@ proc pvi*(close: seq[float],volume: seq[float],): tuple[pvi: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_pvi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var pvi_seq = newSeq[float](output_size)
@@ -1402,8 +1456,10 @@ proc dpo*(data: seq[float],period: float): tuple[dpo: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_dpo(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var dpo_seq = newSeq[float](output_size)
@@ -1448,8 +1504,10 @@ proc linregintercept*(data: seq[float],period: float): tuple[linregintercept: se
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_linregintercept(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var linregintercept_seq = newSeq[float](output_size)
@@ -1494,8 +1552,10 @@ proc stochrsi*(data: seq[float],period: float): tuple[stochrsi: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_stochrsi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var stochrsi_seq = newSeq[float](output_size)
@@ -1546,8 +1606,10 @@ proc ndiv*(data1: seq[float],data2: seq[float],): tuple[ndiv: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_div(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ndiv_seq = newSeq[float](output_size)
@@ -1592,8 +1654,10 @@ proc md*(data: seq[float],period: float): tuple[md: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_md(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var md_seq = newSeq[float](output_size)
@@ -1648,8 +1712,10 @@ proc natr*(high: seq[float],nlow: seq[float],close: seq[float],period: float): t
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_natr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var natr_seq = newSeq[float](output_size)
@@ -1694,8 +1760,10 @@ proc kama*(data: seq[float],period: float): tuple[kama: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_kama(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var kama_seq = newSeq[float](output_size)
@@ -1746,8 +1814,10 @@ proc mul*(data1: seq[float],data2: seq[float],): tuple[mul: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_mul(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var mul_seq = newSeq[float](output_size)
@@ -1798,8 +1868,10 @@ proc add*(data1: seq[float],data2: seq[float],): tuple[add: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_add(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var add_seq = newSeq[float](output_size)
@@ -1844,8 +1916,10 @@ proc sma*(data: seq[float],period: float): tuple[sma: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sma(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sma_seq = newSeq[float](output_size)
@@ -1890,8 +1964,10 @@ proc nvar*(data: seq[float],period: float): tuple[nvar: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_var(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var nvar_seq = newSeq[float](output_size)
@@ -1942,8 +2018,10 @@ proc crossany*(data1: seq[float],data2: seq[float],): tuple[crossany: seq[float]
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_crossany(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var crossany_seq = newSeq[float](output_size)
@@ -1988,8 +2066,10 @@ proc rsi*(data: seq[float],period: float): tuple[rsi: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_rsi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var rsi_seq = newSeq[float](output_size)
@@ -2053,8 +2133,10 @@ proc di*(high: seq[float],nlow: seq[float],close: seq[float],period: float): tup
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_di(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var plus_di_seq = newSeq[float](output_size)
@@ -2100,8 +2182,10 @@ proc cosh*(data: seq[float],): tuple[cosh: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_cosh(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var cosh_seq = newSeq[float](output_size)
@@ -2153,8 +2237,10 @@ proc dx*(high: seq[float],nlow: seq[float],period: float): tuple[dx: seq[float]]
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_dx(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var dx_seq = newSeq[float](output_size)
@@ -2205,8 +2291,10 @@ proc medprice*(high: seq[float],nlow: seq[float],): tuple[medprice: seq[float]] 
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_medprice(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var medprice_seq = newSeq[float](output_size)
@@ -2251,8 +2339,10 @@ proc decay*(data: seq[float],period: float): tuple[decay: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_decay(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var decay_seq = newSeq[float](output_size)
@@ -2303,8 +2393,10 @@ proc sub*(data1: seq[float],data2: seq[float],): tuple[sub: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sub(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sub_seq = newSeq[float](output_size)
@@ -2356,8 +2448,10 @@ proc mass*(high: seq[float],nlow: seq[float],period: float): tuple[mass: seq[flo
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_mass(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var mass_seq = newSeq[float](output_size)
@@ -2401,8 +2495,10 @@ proc tanh*(data: seq[float],): tuple[tanh: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_tanh(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var tanh_seq = newSeq[float](output_size)
@@ -2449,8 +2545,10 @@ proc vosc*(volume: seq[float],short_period: float, long_period: float,): tuple[v
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_vosc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var vosc_seq = newSeq[float](output_size)
@@ -2502,8 +2600,10 @@ proc adx*(high: seq[float],nlow: seq[float],period: float): tuple[adx: seq[float
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_adx(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var adx_seq = newSeq[float](output_size)
@@ -2547,8 +2647,10 @@ proc todeg*(data: seq[float],): tuple[degrees: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_todeg(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var degrees_seq = newSeq[float](output_size)
@@ -2593,8 +2695,10 @@ proc roc*(data: seq[float],period: float): tuple[roc: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_roc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var roc_seq = newSeq[float](output_size)
@@ -2651,8 +2755,10 @@ proc ad*(high: seq[float],nlow: seq[float],close: seq[float],volume: seq[float],
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ad(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ad_seq = newSeq[float](output_size)
@@ -2697,8 +2803,10 @@ proc sum*(data: seq[float],period: float): tuple[sum: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sum(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sum_seq = newSeq[float](output_size)
@@ -2750,8 +2858,10 @@ proc qstick*(open: seq[float],close: seq[float],period: float): tuple[qstick: se
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_qstick(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var qstick_seq = newSeq[float](output_size)
@@ -2795,8 +2905,10 @@ proc floor*(data: seq[float],): tuple[floor: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_floor(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var floor_seq = newSeq[float](output_size)
@@ -2841,8 +2953,10 @@ proc trima*(data: seq[float],period: float): tuple[trima: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_trima(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var trima_seq = newSeq[float](output_size)
@@ -2889,8 +3003,10 @@ proc apo*(data: seq[float],short_period: float, long_period: float,): tuple[apo:
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_apo(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var apo_seq = newSeq[float](output_size)
@@ -2935,8 +3051,10 @@ proc wilders*(data: seq[float],period: float): tuple[wilders: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_wilders(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var wilders_seq = newSeq[float](output_size)
@@ -2980,8 +3098,10 @@ proc round*(data: seq[float],): tuple[round: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_round(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var round_seq = newSeq[float](output_size)
@@ -3025,8 +3145,10 @@ proc tan*(data: seq[float],): tuple[tan: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_tan(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var tan_seq = newSeq[float](output_size)
@@ -3081,8 +3203,10 @@ proc atr*(high: seq[float],nlow: seq[float],close: seq[float],period: float): tu
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_atr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var atr_seq = newSeq[float](output_size)
@@ -3127,8 +3251,10 @@ proc volatility*(data: seq[float],period: float): tuple[volatility: seq[float]] 
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_volatility(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var volatility_seq = newSeq[float](output_size)
@@ -3172,8 +3298,10 @@ proc sin*(data: seq[float],): tuple[sin: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sin(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sin_seq = newSeq[float](output_size)
@@ -3225,8 +3353,10 @@ proc vwma*(close: seq[float],volume: seq[float],period: float): tuple[vwma: seq[
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_vwma(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var vwma_seq = newSeq[float](output_size)
@@ -3287,8 +3417,10 @@ proc dm*(high: seq[float],nlow: seq[float],period: float): tuple[plus_dm: seq[fl
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_dm(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var plus_dm_seq = newSeq[float](output_size)
@@ -3344,8 +3476,10 @@ proc tr*(high: seq[float],nlow: seq[float],close: seq[float],): tuple[tr: seq[fl
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_tr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var tr_seq = newSeq[float](output_size)
@@ -3403,8 +3537,10 @@ proc mfi*(high: seq[float],nlow: seq[float],close: seq[float],volume: seq[float]
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_mfi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var mfi_seq = newSeq[float](output_size)
@@ -3458,8 +3594,10 @@ proc psar*(high: seq[float],nlow: seq[float],acceleration_factor_step: float, ac
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_psar(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var psar_seq = newSeq[float](output_size)
@@ -3513,8 +3651,10 @@ proc wcprice*(high: seq[float],nlow: seq[float],close: seq[float],): tuple[wcpri
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_wcprice(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var wcprice_seq = newSeq[float](output_size)
@@ -3571,8 +3711,10 @@ proc bop*(open: seq[float],high: seq[float],nlow: seq[float],close: seq[float],)
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_bop(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var bop_seq = newSeq[float](output_size)
@@ -3624,8 +3766,10 @@ proc adxr*(high: seq[float],nlow: seq[float],period: float): tuple[adxr: seq[flo
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_adxr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var adxr_seq = newSeq[float](output_size)
@@ -3670,8 +3814,10 @@ proc max*(data: seq[float],period: float): tuple[max: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_max(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var max_seq = newSeq[float](output_size)
@@ -3716,8 +3862,10 @@ proc fosc*(data: seq[float],period: float): tuple[fosc: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_fosc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var fosc_seq = newSeq[float](output_size)
@@ -3762,8 +3910,10 @@ proc tsf*(data: seq[float],period: float): tuple[tsf: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_tsf(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var tsf_seq = newSeq[float](output_size)
@@ -3830,8 +3980,10 @@ proc stoch*(high: seq[float],nlow: seq[float],close: seq[float],k_period: float,
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_stoch(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var stoch_k_seq = newSeq[float](output_size)
@@ -3894,8 +4046,10 @@ proc fisher*(high: seq[float],nlow: seq[float],period: float): tuple[fisher: seq
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_fisher(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var fisher_seq = newSeq[float](output_size)
@@ -3941,8 +4095,10 @@ proc sinh*(data: seq[float],): tuple[sinh: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_sinh(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var sinh_seq = newSeq[float](output_size)
@@ -3987,8 +4143,10 @@ proc rocr*(data: seq[float],period: float): tuple[rocr: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_rocr(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var rocr_seq = newSeq[float](output_size)
@@ -4033,8 +4191,10 @@ proc lag*(data: seq[float],period: float): tuple[lag: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_lag(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var lag_seq = newSeq[float](output_size)
@@ -4088,8 +4248,10 @@ proc msw*(data: seq[float],period: float): tuple[msw_sine: seq[float],msw_lead: 
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_msw(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var msw_sine_seq = newSeq[float](output_size)
@@ -4135,8 +4297,10 @@ proc torad*(data: seq[float],): tuple[radians: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_torad(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var radians_seq = newSeq[float](output_size)
@@ -4180,8 +4344,10 @@ proc ceil*(data: seq[float],): tuple[ceil: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ceil(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ceil_seq = newSeq[float](output_size)
@@ -4226,8 +4392,10 @@ proc mom*(data: seq[float],period: float): tuple[mom: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_mom(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var mom_seq = newSeq[float](output_size)
@@ -4278,8 +4446,10 @@ proc nvi*(close: seq[float],volume: seq[float],): tuple[nvi: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_nvi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var nvi_seq = newSeq[float](output_size)
@@ -4333,8 +4503,10 @@ proc emv*(high: seq[float],nlow: seq[float],volume: seq[float],): tuple[emv: seq
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_emv(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var emv_seq = newSeq[float](output_size)
@@ -4395,8 +4567,10 @@ proc bbands*(data: seq[float],period: float, stddev: float,): tuple[bbands_lower
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_bbands(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var bbands_lower_seq = newSeq[float](output_size)
@@ -4448,8 +4622,10 @@ proc vidya*(data: seq[float],short_period: float, long_period: float, alpha: flo
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_vidya(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var vidya_seq = newSeq[float](output_size)
@@ -4510,8 +4686,10 @@ proc aroon*(high: seq[float],nlow: seq[float],period: float): tuple[aroon_down: 
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_aroon(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var aroon_down_seq = newSeq[float](output_size)
@@ -4558,8 +4736,10 @@ proc vhf*(data: seq[float],period: float): tuple[vhf: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_vhf(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var vhf_seq = newSeq[float](output_size)
@@ -4604,8 +4784,10 @@ proc edecay*(data: seq[float],period: float): tuple[edecay: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_edecay(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var edecay_seq = newSeq[float](output_size)
@@ -4665,8 +4847,10 @@ proc kvo*(high: seq[float],nlow: seq[float],close: seq[float],volume: seq[float]
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_kvo(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var kvo_seq = newSeq[float](output_size)
@@ -4710,8 +4894,10 @@ proc acos*(data: seq[float],): tuple[acos: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_acos(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var acos_seq = newSeq[float](output_size)
@@ -4758,8 +4944,10 @@ proc ppo*(data: seq[float],short_period: float, long_period: float,): tuple[ppo:
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_ppo(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var ppo_seq = newSeq[float](output_size)
@@ -4813,8 +5001,10 @@ proc typprice*(high: seq[float],nlow: seq[float],close: seq[float],): tuple[typp
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_typprice(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var typprice_seq = newSeq[float](output_size)
@@ -4858,8 +5048,10 @@ proc cos*(data: seq[float],): tuple[cos: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_cos(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var cos_seq = newSeq[float](output_size)
@@ -4903,8 +5095,10 @@ proc exp*(data: seq[float],): tuple[exp: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_exp(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var exp_seq = newSeq[float](output_size)
@@ -4949,8 +5143,10 @@ proc dema*(data: seq[float],period: float): tuple[dema: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_dema(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var dema_seq = newSeq[float](output_size)
@@ -4995,8 +5191,10 @@ proc linreg*(data: seq[float],period: float): tuple[linreg: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_linreg(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var linreg_seq = newSeq[float](output_size)
@@ -5047,8 +5245,10 @@ proc crossover*(data1: seq[float],data2: seq[float],): tuple[crossover: seq[floa
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_crossover(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var crossover_seq = newSeq[float](output_size)
@@ -5093,8 +5293,10 @@ proc zlema*(data: seq[float],period: float): tuple[zlema: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_zlema(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var zlema_seq = newSeq[float](output_size)
@@ -5139,8 +5341,10 @@ proc stddev*(data: seq[float],period: float): tuple[stddev: seq[float]] =
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_stddev(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var stddev_seq = newSeq[float](output_size)
@@ -5194,8 +5398,10 @@ proc marketfi*(high: seq[float],nlow: seq[float],volume: seq[float],): tuple[mar
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_marketfi(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var marketfi_seq = newSeq[float](output_size)
@@ -5255,8 +5461,10 @@ proc adosc*(high: seq[float],nlow: seq[float],close: seq[float],volume: seq[floa
   # -----------------------------------------------------------------------------------
   # Call Tulip lib func
   let ti_err: cint = ti_adosc(size=input_size.cint, inputs=input_data, options=opts, outputs=output_data)
-  if(ti_err > 0):
-    echo "Tulip Func Return : " & $ti_err
+  if(ti_err == 1):
+    echo "TI_INVALID_OPTION : " & $ti_err
+  elif(ti_err == 2):
+    echo "TI_OUT_OF_MEMORY : " & $ti_err
   else:
 
     var adosc_seq = newSeq[float](output_size)
