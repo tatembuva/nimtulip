@@ -7,8 +7,6 @@ Nim bindings for Tulip Indicators : an open-source library of technical analysis
 
 `nimble install https://github.com/tatembuva/nimtulip`
 
-*WIP* `nimble install nimtulip`
-
 ## Usage
 
 ```nim
